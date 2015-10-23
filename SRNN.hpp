@@ -1,18 +1,13 @@
 #ifndef SRNN_H_INCLUDED
 #define SRNN_H_INCLUDED
 
-/*
 #include <math.h>
 #include <time.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-*/
 
-#include "mbed.h"
-
-#include "./util/util.hpp"
-
+#include "util.hpp"
 
 class SRNN
 {

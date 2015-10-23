@@ -1,15 +1,8 @@
 #ifndef UTIL_H_INCLUDED
 #define UTIL_H_INCLUDED
 
-/*
 #include <math.h>
 #include <float.h>
-*/
-
-#include "mbed.h"
-
-/* float.h がないので, FLT_MAXをここで */
-#define FLT_MAX  (0x1.fffffeP127F)      // float max
 
 // 特に行列演算用のマクロ集
 

@@ -1,21 +1,14 @@
-#include "mbed.h"
-
 #include "SRNN.hpp"
-#include "./debug/debug.hpp"
-
-LocalFileSystem local("local");  // マウントポイントを定義（ディレクトリパスになる）
 
 // SRNNのテストルーチン
 int main(void) {
   FILE* fp;
-  const char* fname = "/local/testdata.csv";
+  const char* fname = "testdata.csv";
   // char s[100];
   // int ret, n1, n2;
   int ret;
   float f1, f2, f3;
   
-  set_new_handler(no_memory);
-
   float* test_sample = new float[250 * 3];
   float* test_sample_maxmin = new float[3 * 2];
   test_sample_maxmin[0] = 20;
@@ -42,13 +35,12 @@ int main(void) {
   }
 
   /* アドバイス:RNNにおいては,ダイナミクス(中間層のニューロン数)は多いほど良い */
-  SRNN srnn(3, 30, 240, test_sample, test_sample_maxmin);
+  SRNN srnn(3, 2000, 240, test_sample, test_sample_maxmin);
 
   srnn.learning();
 
   delete [] test_sample; delete [] test_sample_maxmin;
   fclose( fp );
-  free( fp );   // required for mbed.
   return 0;
   
 }

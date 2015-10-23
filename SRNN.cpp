@@ -38,7 +38,7 @@ SRNN::SRNN(int    dim,
   this->maxIteration   = 5000;
   this->goalError      = float(0.001);
   this->epsilon        = float(0.00001);
-  this->learnRate      = float(0.9);   // 敏感に反応できるように, 高めに設定した. 時系列データなので, サンプルの時間間隔によって変えるべき
+  this->learnRate      = float(0.1);   
   this->alpha          = float(0.8 * learnRate);
   this->alpha_context  = float(0.8);
   this->width_initW    = float(1.0/num_mid_neuron);
